@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>uusiViesti</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Add student</h1>
+	<div class="container">
+		<div class="col-md-4">
+		<form th:object="${student}" th:action="@{save}" action="#" method="post">
+		  	<label for="fname">Otsikko</label>
+			<input type="text" id="fname" th:field="*{firstName}" class="form-control"/>
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="lname">Teksti</label>
+			<input type="text" id="lname" th:field="*{lastName}" class="form-control"/>
+			
+		  	
+
+			<div style="clear: both; display: block; height: 10px;"></div>						
+		  	<label for="deplist">Kategoria</label>
+			 <select id="deplist" th:field="*{kategoria}" class="form-control">
+       			<option th:each="kategoria: ${kategoria}" th:value="${kategoria.kategoriaid}" th:text="${kategoria.nimi}"></option>
+    		</select>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" class="btn btn-primary" value="Save"></input>
+		</form>
+		</div>
+	</div>
+</body>
+</html>

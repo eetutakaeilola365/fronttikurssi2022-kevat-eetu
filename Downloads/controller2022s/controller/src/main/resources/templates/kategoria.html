@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Server Programming</title>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8" />
+</head>
+<body>
+	<p th:text="'id: ' + ${Viesti.id}" />
+	<p th:text="'content: ' + ${Viesti.viestit}" />
+	<a href="/kategoria">Submit another message</a>
+</body>
+</html>
